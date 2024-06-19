@@ -1,0 +1,111 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #1c2638;
+}
+
+.App h1 {
+  text-align: center;
+  color: black;
+  border: 2px solid rgb(37, 35, 35);
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    pink 0%,
+    paleturquoise 50%,
+    paleturquoise 100%
+  );
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.user-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  cursor: pointer;
+  box-shadow: rgba(123, 167, 202, 0.301) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.user-item {
+  background: linear-gradient(
+    to right,
+    rgba(77, 52, 31, 0.267) 0%,
+    rgba(104, 82, 59, 0.699) 50%,
+    rgba(170, 153, 25, 0.411) 100%
+  );
+  padding: 15px;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(192, 160, 16, 0.267); /* Box shadow for card effect */
+  text-align: left;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.user-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+
+.user-item .title {
+  font-weight: bold;
+  color: #e1eaec;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.pagination {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 40px;
+}
+
+.pagination li {
+  display: inline;
+}
+
+.pagination button {
+  padding: 0.8rem 1.3rem;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination .active button {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+  .user-list {
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+  }
+}
+
+@media (max-width: 600px) {
+  .user-list {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+}
